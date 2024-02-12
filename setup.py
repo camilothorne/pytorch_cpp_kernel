@@ -1,9 +1,3 @@
-# Available at setup time due to pyproject.toml
-#from pybind11.setup_helpers import Pybind11Extension, build_ext
-#from torch.utils.cpp_extension import include_paths, library_paths
-#import os
-#from glob import glob
-
 from torch.utils.cpp_extension import BuildExtension, CppExtension
 from setuptools import setup
 from distutils.tests.test_archive_util import test_suite

@@ -28,6 +28,7 @@ jobs:
         python -c "import torch; print(torch.__version__)"
     - name: Compile kernel
       run: |
+        echo $PYTHON
         python setup.py install
         pip install -e .
     - name: List files
