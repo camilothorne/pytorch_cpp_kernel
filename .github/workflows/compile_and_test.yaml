@@ -24,10 +24,12 @@ jobs:
         pip install pybind11
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Test torch
+      run: |
         python -c "import torch; print(torch.__version__)"
     - name: Compile kernel
-       python setup.py install
-       pip install -e .
+      run: |
+        python setup.py install
+        pip install -e .
     - name: List files
       run: |
         ls -la
