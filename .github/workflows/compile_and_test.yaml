@@ -30,7 +30,6 @@ jobs:
       run: |
         echo $PYTHON
         python setup.py install
-        pip install -e .
     - name: List files
       run: |
         ls -la
