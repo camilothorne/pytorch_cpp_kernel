@@ -1,4 +1,4 @@
-import math, copy
+import math, copy, os.path
 import torch
 import numpy as np
 from tqdm import tqdm
@@ -107,6 +107,9 @@ if __name__ == '__main__':
     '''
     We test the code on the California housing Scikit-learn dataset.
     '''
+    
+    # Path to directroy of script
+    my_path = os.path.abspath(os.path.dirname(__file__))
     
     # Read and scale data
     data    = fetch_california_housing()
@@ -224,5 +227,4 @@ if __name__ == '__main__':
     plt.xlabel("Validation batch")
     plt.title(f"Training loss over {epochs} epochs")
     plt.legend(loc="upper right", title="(best={:.2f})".format(best_mse))
-    plt.savefig("training-vs-val-loss.png")
-    plt.show()
+    plt.savefig(os.path.join(my_path, "training-vs-val-loss.png"))
