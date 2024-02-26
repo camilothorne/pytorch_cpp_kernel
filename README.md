@@ -1,5 +1,4 @@
 ## Custom PyTorch C++ Kernel
----
 
 - Compiled for Python 3.6.x
 - Custom functions written in C++ v14, using `torch` v1.x C++ API
