@@ -1,10 +1,12 @@
-## Custom `torch` C++ Kernel
+## Custom PyTorch C++ Kernel
 ---
 
 - Compiled for Python 3.6.x
 - Custom functions written in C++ v14, using `torch` v1.x C++ API
 - Functions bound to a Python module using `pybind11`
 - Uses `setuptools` for building, and `pytest` for testing
+- Implements in C++ the custom LSTM-like layer (forward and backward passes), described in this PyTorch tutorial:
+  * https://pytorch.org/tutorials/advanced/cpp_extension.html
 
 To compile, run
 ```bash
@@ -23,3 +25,11 @@ To import the module, import first `torch`
 import torch
 import torch_kernel
 ```
+
+To train a sample regressor neural network (one LSTM-like layer followed by a linear layer) run:
+```bash
+python applications/custom_nn.py
+```
+This script contains PyTorch classes wrapping up the custom layer. It also shows
+how to run stochastic gradient descent to update the network weights, and solve
+a sample Scikit-learn regression problem.
