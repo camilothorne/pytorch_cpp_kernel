@@ -5,8 +5,10 @@
 - Custom functions written in C++ v14, using `torch` v1.x C++ API
 - Functions bound to a Python module using `pybind11`
 - Uses `setuptools` for building, and `pytest` for testing
-- Implements in C++ the custom LSTM-like layer (forward and backward passes), described in this PyTorch tutorial:
-  * https://pytorch.org/tutorials/advanced/cpp_extension.html
+- Implements in C++ a custom LSTM-like layer (forward and backward passes), and plugs it in a regression
+  model, based on these tutorials:
+  * https://pytorch.org/tutorials/advanced/cpp_extension.html (PyTorch C++ kernel)
+  * https://machinelearningmastery.com/building-a-regression-model-in-pytorch/ (PyTorch regression model)
 
 To compile, run
 ```bash
